@@ -1,0 +1,9 @@
+.Votes{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    float: left;
+}
+.Votes button{
+   width: 33%;
+}
