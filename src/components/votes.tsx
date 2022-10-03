@@ -41,7 +41,7 @@ export default function Votes() {
 
     return (
         <><div className="vote-here">
-        <h2>Vote Here</h2>
+        <h2 className="VH">Vote Here</h2>
         <button onClick={addChocolateVote}>Chocolate</button> <button onClick={addVanillaVote}>Vanilla</button> <button onClick={addStrawberryVote}>Strawberry</button>
         {chocolateVote > 0 && <h3>Chocolate: {chocolateVote} {chocolatePercent}%</h3>}
         {chocolateVote > 0 && <div className="choco-percent" style={chocolateStyles}></div>}
@@ -49,6 +49,8 @@ export default function Votes() {
         {vanillaVote > 0 && <div className="vanilla-percent" style={vanillaStyles}></div>}
         {strawberryVote > 0 && <h3>Strawberry: {strawberryVote} {strawberryPercent}%</h3>}
         {strawberryVote > 0 && <div className="berry-percent" style={strawberryStyles}></div>}
+        <br></br>
+        {totalVote === 0 && <span>No votes yet.</span>}
         </div></>
     )
 }

@@ -2,4 +2,9 @@
     font-size: 30px;
     color: #0e3c7e;
     font-family: 'Caveat', cursive;
+    border-bottom: 2px black;
+    box-shadow: 5px 5px 5px lightgrey;
+    margin-top: -40px;
+    text-align: center;
+    width: 100%;
 }

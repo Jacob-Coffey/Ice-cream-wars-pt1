@@ -1,9 +1,32 @@
-.Votes{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    float: left;
+@media screen and (max-width: 768px) {
+    .Votes{
+        width: 100%;
+    }
+    .Votes h2{
+        font-family: 'Caveat', cursive;
+    }
 }
-.Votes button{
-   width: 33%;
+.Votes{
+    width: 48%;
+    display: inline-block;
+    margin-left: 4%;
+    
+}
+.Votes h2{
+    font-family: 'Caveat', cursive;
+}
+
+.vote-selection{
+    width: 230px;
+    height: 175px;
+    border: 1px solid black;
+    box-shadow: 5px 5px 10px black; 
+    text-align: center;
+}
+
+.btn{
+    background-color: #0e3c7e;
+}
+.btngray{
+background-color: gray;
 }

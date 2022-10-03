@@ -1,11 +1,14 @@
-import { MouseEvent, useState } from "react";
-import './votes';
-import './AdDesigner.css'
+import { MouseEvent, useRef, useState } from "react";
+import './votes.tsx';
+import './AdDesigner.css';
+import { isDisabled } from "@testing-library/user-event/dist/utils";
 
 export default function AdDesigner() {
     const [count, setCount] = useState(20);
     const [background, setBackground] = useState('white');
-    const [vote, setvote] = useState('');
+    const [color, setColor] = useState('black');
+    const [flavor, setFlavor] = useState('Strawberry');
+    
 
     const upPixels = () => {
         setCount(count + 1);
@@ -24,6 +27,8 @@ export default function AdDesigner() {
 
    const style = {
     backgroundColor: background,
+    color: color,
+    fontSize: count
    };
 
    const lightMode = (
@@ -31,6 +36,7 @@ export default function AdDesigner() {
    ) => {
     event.preventDefault();
     setBackground('white');
+    setColor('black');
    };
 
    const darkMode = (
@@ -38,17 +44,24 @@ export default function AdDesigner() {
    ) => {
     event.preventDefault();
     setBackground('black');
+    setColor('white');
    };
+
   
 
     return (
         <div className="Votes">
             <h2>Ad Designer</h2>
-            <div className="vote-selection">Vote For</div>
+            <div className="vote-selection" style={style}>
+                <span>Vote For</span>
+                <br></br>
+                <br></br>
+                <span style={{fontSize: 15 + count + "px", fontFamily: 'Caveat' + 'cursive'}}>{flavor}</span>
+            </div>
             <h3>What to Support</h3>
-            <button>Chocolate</button> <button>Vanilla</button> <button>Strawberry</button>
+            <button onClick={(e) => setFlavor("Chocolate")}>Chocolate</button> <button onClick={() => setFlavor("Vanilla")}>Vanilla</button> <button onClick={() => setFlavor("Strawberry")}>Strawberry</button>
             <h3>Color Theme</h3>
-            <button onClick={lightMode}>Light</button> <button onClick={darkMode}>Dark</button>
+            <button onClick={(e) => lightMode(e)}>Light</button> <button onClick={(e) => darkMode(e)}>Dark</button>
             <h3>Font Size</h3>
             <button onClick={downPixels}>Down</button> <p>{count}</p> <button onClick={upPixels}>Up</button>
         </div>

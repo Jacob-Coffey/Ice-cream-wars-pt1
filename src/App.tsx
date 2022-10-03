@@ -3,6 +3,7 @@ import './App.css';
 import SetHeader from './components/header';
 import AdDesigner from './components/AdDesigner';
 import Votes from './components/votes';
+import './components/AdDesigner.css'
 
 function App() {
   
